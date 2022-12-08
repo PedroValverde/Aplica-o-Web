@@ -1,0 +1,154 @@
+@import 'https://fonts.googleapis.com/css?family=Cinzel';
+
+.estilo_corpo {
+    width: 100%;
+    font-family: 'Cinzel', serif;
+    font-size: 15px;
+    background-color: azure;
+}
+
+thead {
+    background-color: deepskyblue;
+}
+
+tbody tr:nth-child(odd){
+    background-color: #E9E9E9;
+}
+#ajuste_tabelas {
+    width: 90%;
+}
+
+#container {
+    width: 100%;
+    margin: 0 auto;
+
+}
+
+#label_portal{
+    font-family: 'Cinzel', serif;
+    font-size: 1.2em;
+}
+.cabecalho {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    background-image: linear-gradient(to bottom,#d13728 0,#160e32 100%);
+    border-radius: 5px;
+}
+
+.cabecalho img {
+    float: left;
+    margin-top: 5px;
+    margin-left: 5px;
+    width: 150px;
+}
+
+.cabecalho h1, h2{
+    font-family: 'Cinzel', serif;
+    position: relative;
+}
+
+.cabecalho h1 {    
+    font-size: 3.0em;
+    color: #000;    
+    margin-top: 3%;
+}
+.cabecalho h2 {
+    font-size: 2em;
+    color: #0000CD;
+    margin-top: 1%;
+}
+
+.centralizar {
+    text-align: center;
+}
+.nav > li > a {
+    text-align: left;
+}
+
+.mensagens{
+    color: #B22222;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    width: 70%;
+    margin: auto;
+}
+
+.titulos_menu {
+    border-radius: 5px;
+    border: 1px solid #000;
+    color: white;
+    text-align: center;
+    background-image: linear-gradient(to bottom,#d13728 0,#160e32 80%);
+    font-size: 18px;
+    padding: 10px      
+}
+
+.ajuste_margensLayout{
+    margin-top: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.orientacao_prof label{
+    font-family: 'Cinzel', serif;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #2e6da4;
+}
+.orientacao_prof legend{
+    font-size: 1.2em;    
+    color: #2e6da4;
+}
+
+
+.menuf {
+    
+  font-weight: normal;
+  line-height: 1;
+  color: #000;
+  text-align: center;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  border-radius: 6px;
+
+
+}
+
+th{
+    background-color:#d13728;
+}
+
+#bemVindo{
+    text-size:20em;
+    text-align: center;
+    color:red;
+}
+.usuario{
+    border:2px solid #f0f0f0;
+    display: block;
+    border-radius: 10px;
+    font-size: 14px;
+    width: 100%;
+    padding: 10px;
+    margin: 3px;
+}
+.botao{
+background-color: #d13728 ;
+border: 2px solid #d13728 ;
+color: #fff;
+font-size: 14px;
+width: 100%;
+border-radius: 10px;
+padding: 10px; 
+}
+

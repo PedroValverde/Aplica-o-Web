@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>
+            <ui:insert name="titulo">Portal Anísio</ui:insert>
+        </title>       
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet library="bootstrap" name="css/bootstrap.min.css"/>
+        <h:outputStylesheet library="bootstrap" name="css/bootstrap-theme.min.css"/>
+        <h:outputStylesheet library="bootstrap" name="css/estilo_projeto.css"/>        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <h:outputScript library="bootstrap" name="js/bootstrap.min.js"/>        
+        <link rel="shortcut icon" href="../resources/imagens/portalAluno.ico"/>
+    </h:head>
+    <h:body>
+
+        <h:form id="formLogin">
+
+            <div id="container">
+                <div class="cabecalho margem_padrao ajuste_margensLayout">
+                    <ui:insert name="imagem">
+                        <h:graphicImage library="imagens" name="portalAluno1.png">
+                            <f:passThroughAttribute name="alt" value="Imagem do portal do aluno"/>
+                        </h:graphicImage> 
+                    </ui:insert>
+                    <h1>
+                        <ui:insert name="tituloCabecalho">
+                            Portal Anísio 
+                        </ui:insert>
+
+                    </h1>
+
+                </div>
+                <div id="menu" class="col-md-2 ajuste_margensLayout">
+                </div>
+                <h6>
+                    <div id="menu" class="col-md-2 ajuste_margensLayout">
+                        <ui:insert name="menu">
+                            <ui:include src="login.xhtml"/>
+                        </ui:insert>
+                    </div>
+                </h6>
+                <div id="corpo_pagina" class="col-md-10 ajuste_margensLayout">
+
+                    <ui:insert name="corpo">
+
+                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                            <!-- Indicators -->
+                            <ol class="carousel-indicators">
+                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#myCarousel" data-slide-to="1"></li>
+                                <li data-target="#myCarousel" data-slide-to="2"></li>
+                                <li data-target="#myCarousel" data-slide-to="3"></li>
+                            </ol>
+
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner" role="listbox">
+                                <div class="item active">
+                                    <h:graphicImage library="imagens" name="faculdade1.jpeg" alt="Campus da Universidade"/>           
+
+                                </div>
+
+                                <div class="item">
+                                    <h:graphicImage library="imagens" name="faculdade2.jpeg" alt="Ginásio da Universidade"/>
+
+                                </div>
+
+
+
+                                <div class="item">
+                                    <h:graphicImage library="imagens" name="faculdade3.jpeg" alt="Biblioteca da Universidade"/>
+
+                                </div>
+                                <div class="item">
+                                    <h:graphicImage library="imagens" name="faculdade4.jpeg" alt="Praça central da Universidade"/>
+
+                                </div>
+                            </div>
+
+                            <!-- Left and right controls -->
+                            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                <span class="sr-only">Anterior</span>
+                            </a>
+                            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                <span class="sr-only">Próximo</span>
+                            </a>
+                        </div>
+                    </ui:insert>
+                </div>
+            </div>
+
+        </h:form>
+
+        
+        
+    </h:body>
+</html>
+
+

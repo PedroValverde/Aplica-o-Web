@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html   xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:h="http://xmlns.jcp.org/jsf/html"
+        xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <body>
+        <ui:composition>
+            <div>
+                <h:form>
+
+                    <ul class="nav nav-pills nav-stacked">
+                        <li>
+                            <h:commandLink action="/telas/layout" class="menuf">
+                                <span class="glyphicon glyphicon-home"></span> Inicio
+                            </h:commandLink>
+                        </li>
+                        <li class="titulos_menu">
+                            Cadastros
+                        </li>
+
+                        <li>
+                            <h:commandLink action="#{professorBean.cadastrarNovo()}" class="menuf">
+                                <span class="glyphicon glyphicon-user"></span> Professor
+                            </h:commandLink>
+                        </li>                        
+                        <li>
+                            <h:commandLink action="#{escolaBean.cadastrarNovo()}" class="menuf">
+                                <span class="glyphicon glyphicon-home"></span> Diciplinas
+                            </h:commandLink>
+                        </li>                        
+                        <li>
+                            <h:commandLink action="#{alunoBean.cadastrarNovo()}" class="btn btn-link menuf">
+                                <span class="glyphicon glyphicon-headphones"></span> Aluno
+                            </h:commandLink>
+                        </li>
+                        
+                        <br></br> <br></br><br></br>
+                        <li class="titulos_menu">
+                            Listas
+                        </li>
+                        <li>
+                            <h:commandLink action="/professor/ListarProfessores" class=" menuf">
+                                <span class="glyphicon glyphicon-list-alt"></span> Professores
+                            </h:commandLink>
+                        </li>
+                        <li>
+                            <h:commandLink action="/escola/ListarEscolas" class="menuf">
+                                <span class="glyphicon glyphicon-list"></span> Diciplinas
+                            </h:commandLink>
+                        </li>
+                        <li>
+                            <h:commandLink action="/aluno/ListarAlunos" class="menuf">
+                                <span class="glyphicon glyphicon-sort-by-alphabet-alt"></span> Alunos
+                            </h:commandLink>
+                        </li>
+                    </ul>
+                </h:form>
+            </div>
+
+        </ui:composition>
+        
+                    <ui:composition>
+            <li>
+                <h:commandLink action="/telas/layout" class="btn btn-lg">
+                    <span class="glyphicon glyphicon-home"></span> Voltar
+                </h:commandLink>
+            </li>
+                </ui:composition>
+
+        
+    </body>
+   
+</html>

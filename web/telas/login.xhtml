@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets" >
+    <head>
+        <h:outputStylesheet library="bootstrap" name="css/estilo_projeto.css"/>    
+    </head>
+    <body>
+
+        <ui:composition>
+            <div>
+                <h:form id="formulario">
+                    <div id="corpo_pagina" class="">
+                        <h4 style="color:black;font-weight: bold;"><h:outputText id="bemVindo" value="Bem vindo(a) ao sistema."/></h4>
+                        <br></br>
+                        <h:panelGrid id="gridLoginSenha" columns="2" >
+                            <h:outputText id="loginText" value="Login:"/>
+                            <h:inputText class="usuario"
+                                         id="login" label="Login"
+                                         value="#{usuarioBean.usuario.login}" required="true"/>
+
+                            <h:outputText  id="senhaText" value="Senha:"/>
+                            <h:inputSecret class="usuario"
+                                           id="senha" label="Senha"
+                                           value="#{usuarioBean.usuario.senha}" required="true"/>
+                        </h:panelGrid>
+                        <h:messages id="msgErro" style="color: red"/>
+                        <br></br>
+                        <h:commandButton class="botao"
+                                         id="botao" value="Entrar" action="#{usuarioBean.doEfetuarLogin}"/>
+                    </div>
+                </h:form>
+            </div>
+
+        </ui:composition>
+
+        <ui:composition>
+            <li>
+                <h:commandLink action="/telas/layout" class="btn btn-lg">
+                    <span class="glyphicon glyphicon-home"></span> Voltar
+                </h:commandLink>
+            </li>
+        </ui:composition>
+
+    </body>
+</html>

@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html   xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:h="http://xmlns.jcp.org/jsf/html"
+        xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+        xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/telas/layout.xhtml">
+        <ui:define name="titulo">Cadastro de Alunos</ui:define>
+        <ui:define name="imagem">
+            <h:graphicImage library="imagens" name="portalAluno1.png" >
+                <f:passThroughAttribute name="alt" value="Imagem do portal do aluno - alunos"/>
+            </h:graphicImage> 
+        </ui:define>
+        <ui:define name="tituloCabecalho">
+            Cadastro de Alunos
+        </ui:define>
+        <ui:define name="corpo">
+            <h:form id="formulario">
+                <fieldset class="alert alert-info" style="background: linear-gradient(to bottom,#d13728 0,#160e32 150%) ; color: #000">
+                    <div class="form-group row">
+                        <h:outputLabel class="col-xs-2">Matricula:</h:outputLabel>
+                        <div class="col-xs-2">
+                            <h:inputText id="matricula" class="form-control" value="#{alunoBean.aluno.matricula}" required="true" requiredMessage="Preenchimento do campo &ldquo;Matricula&rdquo; é obrigatório!!"/>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <h:outputLabel class="col-xs-2">Nome:</h:outputLabel>
+                        <div class="col-xs-8">
+                            <h:inputText id="nome" class="form-control" value="#{alunoBean.aluno.nome}" required="true" requiredMessage="Preenchimento do campo &ldquo;Nome&rdquo; é obrigatório!!"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <h:outputLabel class="col-xs-2">Endereco</h:outputLabel>
+                        <div class="col-xs-2">
+                            <h:inputText id="endereco" class="form-control" value="#{alunoBean.aluno.endereco}" required="true" requiredMessage="Preenchimento do campo &ldquo;Nome&rdquo; é obrigatório!!"/>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <h:outputLabel class="col-xs-2">Diciplina</h:outputLabel>
+
+                        <div class="col-xs-2">
+                            <h:selectOneMenu id="localizacao" class="form-control" value="#{alunoBean.aluno.curso}" required="true" requiredMessage="Preenchimento do campo &ldquo;Localização&rdquo; é obrigatório!!" >
+                                <f:selectItem itemValue="" itemLabel="Selecione..." />
+                                <f:selectItem itemValue="Análise e Desenvolvimento de Sistemas" itemLabel="Análise e Desenvolvimento de Sistemas" />
+                                <f:selectItem itemValue="Adminstração" itemLabel="Adminstração" />
+                                <f:selectItem itemValue="Logística" itemLabel="Logística" />
+                            </h:selectOneMenu>
+                        </div>
+
+
+                    </div>
+                    <div class="form-group row">
+                        <h:outputLabel class="col-xs-2">Data nascimento:</h:outputLabel>
+                        <div class="col-xs-2">
+                            <h:inputText id="datanasc" class="form-control" value="#{alunoBean.aluno.dtaNascimento}" required="true" requiredMessage="Preenchimento do campo &ldquo;Data de Nascimento&rdquo; é obrigatório!!">                            
+                                <f:convertDateTime type="both" pattern="dd/MM/yyyy" timeZone="America/Sao_Paulo"/>
+                            </h:inputText>                   
+                        </div>
+                    </div>
+                </fieldset>
+                <div>                    
+                    <h:commandLink class="btn btn-info" action="#{alunoBean.salva}" >
+                        <span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span> Salvar
+                    </h:commandLink>
+                </div>
+                <h:messages class="mensagens"/>                                  
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <ui:composition template="/telas/layout.xhtml">
+        <ui:define name="titulo">Cadastro de Orientações</ui:define>
+        <ui:define name="imagem">
+            <h:graphicImage library="imagens" name="portalAluno1.png" >
+                <f:passThroughAttribute name="alt" value="Imagem do portal do aluno - professores"/>
+            </h:graphicImage> 
+        </ui:define>
+        <ui:define name="tituloCabecalho">
+            Cadastro de Orientações por professor
+        </ui:define>
+        <ui:define name="corpo">
+            <h:form id="formulario">
+                <fieldset class="orientacao_prof">
+                    <legend>Professor</legend>
+                    <div class="form-group row">
+                        <h:outputLabel class="col-xs-8">Nome: #{professorBean.prof.nome}</h:outputLabel>
+                        <h:outputLabel class="col-xs-4">Titulação: #{professorBean.prof.titulacao}</h:outputLabel>
+                    </div>
+                </fieldset>
+                <fieldset class="orientacao_prof">
+                    <legend>Alunos em orientação</legend>
+                    <h:dataTable id="alunosOrientacao" class="table table-striped table-bordered" value="#{professorBean.alunosOrientados}" var="aluno">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Matricula"/>
+                            </f:facet>
+                            <h:outputText value="#{aluno.matricula}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Nome"/>
+                            </f:facet>
+                            <h:outputText value="#{aluno.nome}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Curso"/>
+                            </f:facet>
+                            <h:outputText value="#{aluno.curso}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Data Nascimento"/>
+                            </f:facet>
+                            <h:outputText value="#{aluno.dtaNascimento.time}">
+                                <f:convertDateTime type="both" pattern="dd/MM/yyyy" timeZone="America/Sao_Paulo"/>
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Ações"/>
+                            </f:facet>
+                            <h:commandLink type="reset" action="#{professorBean.prof.removeAluno(aluno)}" title="Excluir Aluno">
+                                <img src="../resources/imagens/excluir.jpg" width="20px"/>                     
+                            </h:commandLink>                  
+                        </h:column>
+                    </h:dataTable>                   
+                </fieldset>
+                <div>
+                    <h:commandLink class="btn btn-info" action="#{professorBean.salva}" >
+                        <span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span> Salvar
+                    </h:commandLink>
+                </div>
+                <h:messages class="mensagens"/>
+                <br/>
+                <fieldset class="orientacao_prof">
+                    <legend>Listagem geral de alunos</legend>
+                    <h:dataTable id="listaAlunos" class="table table-striped table-bordered" value="#{alunoBean.alunos}" var="item">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Matricula"/>
+                            </f:facet>
+                            <h:outputText value="#{item.matricula}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Nome"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nome}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Curso"/>
+                            </f:facet>
+                            <h:outputText value="#{item.curso}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Data Nascimento"/>
+                            </f:facet>
+                            <h:outputText value="#{item.dtaNascimento.time}">
+                                <f:convertDateTime type="both" pattern="dd/MM/yyyy" timeZone="America/Sao_Paulo"/>
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Incluir"/>
+                            </f:facet>                
+                            <h:commandLink action="#{professorBean.prof.adicionaAluno(item)}" title="Selecionar Aluno">
+                                <img src="../resources/imagens/selecionar.jpg" width="20px"/>
+                            </h:commandLink>
+                        </h:column>
+                    </h:dataTable>
+                </fieldset>               
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</html>

@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <ui:composition template="/telas/layout.xhtml">
+        <ui:define name="titulo">Cadastro de Professores</ui:define>
+        <ui:define name="imagem">
+            <h:graphicImage library="imagens" name="portalAluno1.png" >
+                <f:passThroughAttribute name="alt" value="Imagem do portal do aluno - professores"/>
+            </h:graphicImage> 
+        </ui:define>
+        <ui:define name="tituloCabecalho">
+            Cadastro de Professores
+        </ui:define>
+        <ui:define name="corpo">
+            <h:form id="formulario" >
+                <fieldset class="alert alert-info controlesForm" style="background: linear-gradient(to bottom,#d13728 0,#160e32 150%) ; color: #000">
+                    <div class="form-group row">
+                        <h:outputLabel class="col-xs-2">Nome:</h:outputLabel>
+                        <div class="col-xs-8">
+                            <h:inputText id="nome" class="form-control" value="#{professorBean.prof.nome}" required="true" requiredMessage="Preenchimento do campo &ldquo;Nome&rdquo; é obrigatório!!"/>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <h:outputLabel class="col-xs-2">Titulação:</h:outputLabel>
+                        <div class="col-xs-2">
+                            <h:selectOneMenu id="titulacao" class="form-control" 
+                                             value="#{professorBean.prof.titulacao}" 
+                                             required="true"
+                                             requiredMessage="Preenchimento do campo &ldquo;Titulação&rdquo; é obrigatório!!" >
+                                <f:selectItem itemValue="" itemLabel="Selecione..." />
+                                <f:selectItem itemValue="Doutor" itemLabel="Doutor" />
+                                <f:selectItem itemValue="Mestre" itemLabel="Mestre" />
+                                <f:selectItem itemValue="Especialista" itemLabel="Especialista"  />
+                            </h:selectOneMenu>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <h:outputLabel class="col-xs-2">Ano contratação:</h:outputLabel>
+                        <div class="col-xs-2">
+                            <h:inputText id="ano" class="form-control" value="#{professorBean.prof.anocontratacao}" required="true" requiredMessage="Preenchimento do campo &ldquo;Ano contratação&rdquo; é obrigatório!!">
+                                <f:passThroughAttribute name="type" value="number"/>
+                                <f:passThroughAttribute name="min" value="1970"/>
+                            </h:inputText>
+                        </div>
+                    </div>
+                </fieldset>
+                <div>
+                    <h:commandLink class="btn btn-info" action="#{professorBean.salva}" >
+                        <span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span> Salvar
+                    </h:commandLink>
+                </div>
+                <h:messages class="mensagens"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</html>
+
